@@ -1,0 +1,43 @@
+body {
+    background-color: #CDDAF0;
+    background: url("/static/app/network.png");
+}
+h2 {
+    color: blue;
+}
+.form-top-div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgb(171, 222, 30);
+    border-radius: 8px;
+    text-align: center;
+    border: 8px solid rgb(66, 188, 50);
+}
+.form-inline-div {
+    margin-left: auto;
+    margin-right:auto;
+    width: 40%;
+    text-align: left;
+}
+img {
+    margin-top: 3%;
+    border-radius: 8px;
+    border: 8px solid gray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+button {
+    margin-top:20px;
+    width: 80%;
+    border-radius: 30px !important;
+}
+
+input {
+    border: 2px solid gray;
+    border-radius: 8px;
+    width: 150px;
+}
