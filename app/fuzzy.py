@@ -2,6 +2,7 @@ import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 import matplotlib.pyplot as plt
+from django.conf import settings
 
 # New Antecedent/Consequent objects hold universe variables and membership
 # functions
@@ -96,7 +97,7 @@ def calculate(l, p):
         ax.get_yaxis().tick_left()
 
     # plt.tight_layout()
-    plt.savefig("out2.png")
+    plt.savefig(f"{settings.BASE_DIR}\\app\static\\app\output.png")
 
     # plt.show()
     return tipping.output["tip"]

@@ -1,33 +1,39 @@
 body {
     background-color: #CDDAF0;
     background: url("/static/app/network.png");
+    height: 100%;
+    background-size: 100%;
+
 }
 h2 {
     color: blue;
 }
-.form-top-div {
-    margin-left: auto;
-    margin-right: auto;
+.top-div {
+    display: inline-block;
     width: 50%;
+    margin-left: 50px;
+}
+.form-top-div {
+    display: inline-block;
+    width: 100%;
     background-color: rgb(171, 222, 30);
     border-radius: 8px;
     text-align: center;
     border: 8px solid rgb(66, 188, 50);
 }
 .form-inline-div {
-    margin-left: auto;
-    margin-right:auto;
+    margin: auto;
+    display: inline-block;
+    justify-content: center;
     width: 40%;
-    text-align: left;
+    text-align: justify;
 }
-img {
-    margin-top: 3%;
+.gif {
+    margin-top: 50px;
     border-radius: 8px;
     border: 8px solid gray;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    width: 100%;
 }
 
 button {
@@ -41,3 +47,14 @@ input {
     border-radius: 8px;
     width: 150px;
 }
+
+.graph-image {
+    margin-top: 50px;
+    float:right;
+    margin-right: 80px;
+    display: flex;
+}
+
+/* loader */
+
+/* loader end */
