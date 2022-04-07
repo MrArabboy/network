@@ -35,12 +35,13 @@
           <input id="rangeInput2" name="packet_loss_rate" step="0.0000000001" type="range" value="0.0000000001" min="0.0000000001" max="0.1" oninput="amount2.value=rangeInput2.value" />
           <input id="amount2" type="number" onkeydown="return false"  step='0.0000000001' value="0.0000000001" min="0.0000000001" max="0.1" oninput="rangeInput2.value=amount2.value" />
         </div>
-        <button type="submit" class="btn btn-primary">Calculate time</button>
-        <div class="loader">
-          <div class="inner one"></div>
-          <div class="inner two"></div>
-          <div class="inner three"></div>
-        </div>
+       
+        <button type="submit"  class="btn btn-primary submit-button">Calculate time</button>
+       
+          <div class="loader" id="calculating_loader"></div>
+        
+        
+     
         <h1 id="result" style="color:blue"></h1>
       </form>
     
@@ -51,6 +52,7 @@
 <div class="graph-image">
   <img src="{% static 'app/output.png' %}" alt="" srcset="">
 </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

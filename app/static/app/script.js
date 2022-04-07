@@ -1,3 +1,11 @@
+function sleep(milliseconds) {
+  const date = Date.now()
+  let currentDate = null
+  do {
+    currentDate = Date.now()
+  } while (currentDate - date < milliseconds)
+}
+
 function getCookie(name) {
   let cookieValue = null
   if (document.cookie && document.cookie !== '') {
@@ -16,6 +24,11 @@ function getCookie(name) {
 const csrftoken = getCookie('csrftoken')
 
 const onSubmit = async () => {
+  const loader = document.getElementById('calculating_loader')
+  loader.style.display = 'block'
+  const result = document.getElementById('result')
+  result.style.display = 'none'
+  // sleep(3000)
   const input1 = document.getElementById('rangeInput1')
   const input2 = document.getElementById('amount2')
 
@@ -38,9 +51,9 @@ const onSubmit = async () => {
 
     console.log(res)
 
-    const result = document.getElementById('result')
     const time = res.time.toFixed(3)
-
+    loader.style.display = 'none'
+    result.style.display = 'block'
     result.innerText = 'Time = ' + time + ' s'
   } catch (e) {
     console.log(e)
