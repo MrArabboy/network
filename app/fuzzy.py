@@ -1,6 +1,7 @@
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
+from skfuzzy.control.visualization import FuzzyVariableVisualizer
 import matplotlib.pyplot as plt
 from django.conf import settings
 
@@ -34,8 +35,6 @@ def calculate(l, p):
 
     tipping_ctrl = ctrl.ControlSystem([rule1, rule2, rule3, rule4, rule5, rule6])
     tipping = ctrl.ControlSystemSimulation(tipping_ctrl)
-    # print("sdsdsd", dir(tipping_ctrl.antecedents), list(tipping_ctrl.antecedents))
-    # print(tipping_ctrl.graph.nodes())
 
     # Pass inputs to the ControlSystem using Antecedent labels with Pythonic API
     # Note: if you like passing many inputs all at once, use .inputs(dict_of_data)
@@ -44,10 +43,11 @@ def calculate(l, p):
 
     # Crunch the numbers
     tipping.compute()
-    # print(tipping._get_inputs())
 
-    print("Time amount = ", tipping.output["tip"])
+    # print("Time amount = ", tipping.output["tip"])
     # tip.view(sim=tipping)
+    result, ax = FuzzyVariableVisualizer(tip).view(sim=tipping)
+    result.savefig(f"{settings.BASE_DIR}\\app\static\\app\\result.png")
 
     fig, (ax0, ax1, ax2) = plt.subplots(nrows=3, figsize=(8, 9))
 
@@ -81,15 +81,6 @@ def calculate(l, p):
     ax2.set_title("Time amount")
     ax2.legend()
 
-    # ax3.plot(tip.universe, tip["low"].mf, "b", linewidth=0.5, linestyle="--")
-    # ax3.plot(tip.universe, tip["medium"].mf, "g", linewidth=0.5, linestyle="--")
-    # ax3.plot(tip.universe, tip["high"], "r", linewidth=0.5, linestyle="--")
-    # ax3.fill_between(tip, tip0, aggregated, facecolor="Orange", alpha=0.7)
-    # ax3.plot([tip, tip], [0, tip_activation], "k", linewidth=1.5, alpha=0.9)
-
-    # ax3.set_title("Aggregated membership and result (line)")
-    # ax3.legend()
-    # Turn off top/right axes
     for ax in (ax0, ax1, ax2):
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
@@ -101,3 +92,6 @@ def calculate(l, p):
 
     # plt.show()
     return tipping.output["tip"]
+
+
+# https://pythonhosted.org/scikit-fuzzy/auto_examples/plot_tipping_problem.html
