@@ -1,88 +1,141 @@
 body {
-    background-color: #CDDAF0;
-    background: url("/static/app/network.png");
-    height: 100%;
-    background-size: 100%;
-
+  background-color: #cddaf0;
+  background: url('/static/app/network.png');
+  height: 100%;
+  background-size: 100%;
 }
 h2 {
-    color: blue;
+  color: blue;
 }
 .top-div {
-    display: inline-block;
-    width: 50%;
-    margin-left: 50px;
+  display: inline-block;
+  width: 50%;
+  margin-left: 50px;
 }
 .form-top-div {
-    display: inline-block;
-    width: 100%;
-    background-color: rgb(171, 222, 30);
-    border-radius: 8px;
-    text-align: center;
-    border: 8px solid rgb(66, 188, 50);
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(171, 222, 30);
+  border-radius: 8px;
+  text-align: center;
+  border: 8px solid rgb(66, 188, 50);
 }
 .form-inline-div {
-    margin: auto;
-    display: inline-block;
-    justify-content: center;
-    width: 40%;
-    text-align: justify;
+  margin: auto;
+  display: inline-block;
+  justify-content: center;
+  width: 40%;
+  text-align: justify;
 }
 .gif {
-    margin-top: 50px;
-    border-radius: 8px;
-    border: 8px solid gray;
-    display: block;
-    width: 100%;
+  margin-top: 50px;
+  border-radius: 8px;
+  border: 8px solid gray;
+  display: block;
+  width: 100%;
 }
 
 button {
-    margin-top:20px;
-    width: 80%;
-    border-radius: 30px !important;
+  margin-top: 20px;
+  width: 80%;
+  border-radius: 30px !important;
 }
 
 input {
-    border: 2px solid gray;
-    border-radius: 8px;
-    width: 150px;
+  border: 2px solid gray;
+  border-radius: 8px;
+  width: 150px;
 }
 
 .graph-image {
-    margin-top: 50px;
-    float:right;
-    margin-right: 80px;
-    display: flex;
+  margin-top: 50px;
+  float: right;
+  margin-right: 80px;
+  display: flex;
 }
-.submit-button{
-    margin-bottom: 15px;
+.submit-button {
+  margin-bottom: 15px;
 }
 
 /* loader */
 .loader {
-    margin-top: 15px;
-    text-align: center;
-    margin-left:35%;
-    margin-bottom: 25px;
-    display: none;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 60px;
-    height: 60px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
+  margin-top: 15px;
+  text-align: center;
+  margin-left: 35%;
+  margin-bottom: 25px;
+  display: none;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  
-  /* Safari */
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* loader end */
 
+/* modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: max-content;
+}
+
+.modal-content img {
+  width: 640px;
+  height: 480px;
+}
+
+/* The Close Button */
+.close {
+  display: flex;
+  justify-content: flex-end;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

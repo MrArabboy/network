@@ -4,6 +4,7 @@ from skfuzzy import control as ctrl
 from skfuzzy.control.visualization import FuzzyVariableVisualizer
 import matplotlib.pyplot as plt
 from django.conf import settings
+import random
 
 # New Antecedent/Consequent objects hold universe variables and membership
 # functions
@@ -47,51 +48,52 @@ def calculate(l, p):
     # print("Time amount = ", tipping.output["tip"])
     # tip.view(sim=tipping)
     result, ax = FuzzyVariableVisualizer(tip).view(sim=tipping)
-    result.savefig(f"{settings.BASE_DIR}\\app\static\\app\\result.png")
+    random_image_name = f"result_{random.randint(1,99999)}"
+    result.savefig(f"{settings.BASE_DIR}\\app\static\\app\\{random_image_name}.png")
 
-    fig, (ax0, ax1, ax2) = plt.subplots(nrows=3, figsize=(8, 9))
+    # fig, (ax0, ax1, ax2) = plt.subplots(nrows=3, figsize=(8, 9))
 
-    ax0.plot(quality.universe, quality["poor"].mf, "b", linewidth=1.5, label="Low")
-    ax0.plot(quality.universe, quality["medium"].mf, "g", linewidth=1.5, label="Medium")
-    ax0.plot(quality.universe, quality["high"].mf, "r", linewidth=1.5, label="High")
-    ax0.set_title("Loading")
-    ax0.legend()
+    # ax0.plot(quality.universe, quality["poor"].mf, "b", linewidth=1.5, label="Low")
+    # ax0.plot(quality.universe, quality["medium"].mf, "g", linewidth=1.5, label="Medium")
+    # ax0.plot(quality.universe, quality["high"].mf, "r", linewidth=1.5, label="High")
+    # ax0.set_title("Loading")
+    # ax0.legend()
 
-    ax1.plot(
-        service.universe,
-        service["acceptable"].mf,
-        "b",
-        linewidth=1.5,
-        label="Acceptable",
-    )
-    ax1.plot(
-        service.universe,
-        service["unacceptable"].mf,
-        "g",
-        linewidth=1.5,
-        label="Unacceptable",
-    )
+    # ax1.plot(
+    #     service.universe,
+    #     service["acceptable"].mf,
+    #     "b",
+    #     linewidth=1.5,
+    #     label="Acceptable",
+    # )
+    # ax1.plot(
+    #     service.universe,
+    #     service["unacceptable"].mf,
+    #     "g",
+    #     linewidth=1.5,
+    #     label="Unacceptable",
+    # )
 
-    ax1.set_title("Packet Loss Rate")
-    ax1.legend()
+    # ax1.set_title("Packet Loss Rate")
+    # ax1.legend()
 
-    ax2.plot(tip.universe, tip["low"].mf, "b", linewidth=1.5, label="low")
-    ax2.plot(tip.universe, tip["medium"].mf, "g", linewidth=1.5, label="medium")
-    ax2.plot(tip.universe, tip["high"].mf, "r", linewidth=1.5, label="high")
-    ax2.set_title("Time amount")
-    ax2.legend()
+    # ax2.plot(tip.universe, tip["low"].mf, "b", linewidth=1.5, label="low")
+    # ax2.plot(tip.universe, tip["medium"].mf, "g", linewidth=1.5, label="medium")
+    # ax2.plot(tip.universe, tip["high"].mf, "r", linewidth=1.5, label="high")
+    # ax2.set_title("Time amount")
+    # ax2.legend()
 
-    for ax in (ax0, ax1, ax2):
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
-        ax.get_xaxis().tick_bottom()
-        ax.get_yaxis().tick_left()
+    # for ax in (ax0, ax1, ax2):
+    #     ax.spines["top"].set_visible(False)
+    #     ax.spines["right"].set_visible(False)
+    #     ax.get_xaxis().tick_bottom()
+    #     ax.get_yaxis().tick_left()
 
     # plt.tight_layout()
-    plt.savefig(f"{settings.BASE_DIR}\\app\static\\app\output.png")
+    # plt.savefig(f"{settings.BASE_DIR}\\app\static\\app\output.png")
 
     # plt.show()
-    return tipping.output["tip"]
+    return tipping.output["tip"], random_image_name
 
 
 # https://pythonhosted.org/scikit-fuzzy/auto_examples/plot_tipping_problem.html
