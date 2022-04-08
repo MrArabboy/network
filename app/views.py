@@ -20,7 +20,7 @@ def calculate_time(request):
         # time = calculate(loading_time, packet_loss_rate)
         time, img_name = calculate(loading_time, packet_loss_rate)
         # print(loading_time, packet_loss_rate)
-        for filename in glob.glob(f"{settings.BASE_DIR}\\staticfiles\\app\\result*"):
+        for filename in glob.glob(f"{settings.BASE_DIR}/staticfiles/app/result*"):
             print(os.path.basename(filename))
             if os.path.basename(filename) == f"{img_name}.png":
                 continue
