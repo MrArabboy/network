@@ -49,7 +49,8 @@ def calculate(l, p):
     # tip.view(sim=tipping)
     result, ax = FuzzyVariableVisualizer(tip).view(sim=tipping)
     random_image_name = f"result_{random.randint(1,99999)}"
-    result.savefig(f"{settings.BASE_DIR}\\staticfiles\\app\\{random_image_name}.png")
+
+    result.savefig(f"{settings.BASE_DIR}/staticfiles/app/{random_image_name}.png")
 
     # fig, (ax0, ax1, ax2) = plt.subplots(nrows=3, figsize=(8, 9))
 
