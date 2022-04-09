@@ -35,8 +35,8 @@
           <input id="amount2" type="number" onkeydown="return false"  step='0.0000000001' value="0.0000000001" min="0.0000000001" max="0.1" oninput="rangeInput2.value=amount2.value" />
         </div>
        
-        <button type="submit"  class="btn btn-primary submit-button">Calculate time</button>
-       
+        <button type="submit" id="calculate-button" class="btn btn-primary submit-button">Calculate time</button>
+        <button id="myBtn" class="btn btn-success">Open Graph</button>
           <div class="loader" id="calculating_loader"></div>
         
         
@@ -53,8 +53,7 @@
 </div>
 
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
 

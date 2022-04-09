@@ -139,3 +139,6 @@ input {
   text-decoration: none;
   cursor: pointer;
 }
+#myBtn {
+  display: none;
+}

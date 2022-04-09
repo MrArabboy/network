@@ -28,6 +28,8 @@ const onSubmit = async () => {
   loader.style.display = 'flex'
   const result = document.getElementById('result')
   result.style.display = 'none'
+  const graph = document.getElementById('myBtn')
+
   // sleep(3000)
   const input1 = document.getElementById('rangeInput1')
   const input2 = document.getElementById('amount2')
@@ -55,6 +57,7 @@ const onSubmit = async () => {
 
     const time = res.time.toFixed(5)
     loader.style.display = 'none'
+    graph.style.display = 'block'
     result.style.display = 'block'
     result.innerText = 'Time = ' + time + ' s'
   } catch (e) {
