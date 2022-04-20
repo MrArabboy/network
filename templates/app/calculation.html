@@ -1,0 +1,45 @@
+{% load static %}
+<div class='top-div'>
+    <!-- slider -->
+    <div class="w3-content gif" style="max-width:1200px">
+      <img class="mySlides" src="{% static '/app/bg.jpg'%}" style="width:100%;display:none;height:500px">
+      <img class="mySlides" src="{% static '/app/network.gif'%}" style="width:100%;height:500px">
+     
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col s4"  style="width:50%">
+          <img class="demo w3-opacity w3-hover-opacity-off" src="{% static '/app/bg.jpg'%}" style="width:100%;cursor:pointer;height:100px" onclick="currentDiv(1)">
+        </div>
+        <div class="w3-col s4" style="float:right; width:50%">
+          <img class="demo w3-opacity w3-hover-opacity-off" src="{% static '/app/network.gif'%}" style="width:100%;cursor:pointer;height:100px" onclick="currentDiv(2)">
+        </div>
+      </div>
+    </div>
+    <div class="form-top-div">
+      <div class="form-inline-div">
+        <form id="new_form" onsubmit='event.preventDefault(); onSubmit();'>
+          {% csrf_token %}
+          <h2>
+              Input Loading value:
+          </h2>
+          <div>
+            <input id="rangeInput1" name="loading_value" step="0.0000000001" type="range" value="0.0000000001" min="0" max="1" oninput="amount1.value=rangeInput1.value" />
+            <input id="amount1" type="number" step='0.0000000001' value="0.0000000001" min="0" max="1" oninput="rangeInput1.value=amount1.value" />
+          </div>
+          <h2>
+              Input packet loss rate:
+          </h2>
+          <div>
+            <input id="rangeInput2" name="packet_loss_rate" step="0.0000000001" type="range" value="0.0000000001" min="0.0000000001" max="0.1" oninput="amount2.value=rangeInput2.value" />
+            <input id="amount2" type="number" onkeydown="return false"  step='0.0000000001' value="0.0000000001" min="0.0000000001" max="0.1" oninput="rangeInput2.value=amount2.value" />
+          </div>
+         
+          <button type="submit" id="calculate-button" class="btn btn-primary submit-button">Calculate time</button>
+          <button id="myBtn" class="btn btn-success">Open Graph</button>
+            <div class="loader" id="calculating_loader"></div>
+       
+          <h1 id="result" style="color:blue"></h1>
+        </form>
+      
+      </div>
+     </div>
+  </div>

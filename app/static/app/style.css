@@ -1,6 +1,7 @@
 body {
   background-color: #cddaf0;
-  background: url('/static/app/network.png');
+  /* background: url('/static/app/network.png'); */
+  background-color: #3da8ea;
   height: 100%;
   background-size: 100%;
 }
@@ -15,7 +16,7 @@ h2 {
 .form-top-div {
   display: inline-block;
   width: 100%;
-  background-color: rgb(171, 222, 30);
+  background-color: rgb(173, 238, 240);
   border-radius: 8px;
   text-align: center;
   border: 8px solid rgb(66, 188, 50);
