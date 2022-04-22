@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="form-top-div">
-      <div class="form-inline-div">
+      <div class="form-inline-div" id="form_inline">
         <form id="new_form" onsubmit='event.preventDefault(); onSubmit();'>
           {% csrf_token %}
           <h2>
@@ -37,9 +37,16 @@
           <button id="myBtn" class="btn btn-success">Open Graph</button>
             <div class="loader" id="calculating_loader"></div>
        
-          <h1 id="result" style="color:blue"></h1>
+          
         </form>
       
       </div>
+      <div class="result" id="result">
+        <h2 id="update_timer" style="color:blue"></h1>
+        <h2 id="invalid_timer" style="color:blue"></h1>
+        <h2 id="hold_down" style="color:blue"></h1>
+        <h2 id="flush_timer" style="color:blue"></h1>
+       </div>
      </div>
+     
   </div>

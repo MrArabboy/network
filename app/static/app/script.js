@@ -29,6 +29,10 @@ const onSubmit = async () => {
   const result = document.getElementById('result')
   result.style.display = 'none'
   const graph = document.getElementById('myBtn')
+  const calculation_form = document.getElementById('form_inline')
+  calculation_form.style.display = 'block'
+  calculation_form.style.float = 'left'
+  calculation_form.style.marginLeft = '20px'
 
   // sleep(3000)
   const input1 = document.getElementById('rangeInput1')
@@ -58,8 +62,16 @@ const onSubmit = async () => {
     const time = res.time.toFixed(5)
     loader.style.display = 'none'
     graph.style.display = 'block'
-    result.style.display = 'block'
-    result.innerText = 'Time = ' + time + ' s'
+    result.style.display = 'inline-block'
+    result.style.float = 'right'
+    document.getElementById('update_timer').innerText =
+      'Update Timer = ' + Number(time).toFixed(4) + ' s'
+    document.getElementById('invalid_timer').innerText =
+      'Invalid Timer = ' + 6 * Number(time).toFixed(4) + ' s'
+    document.getElementById('hold_down').innerText =
+      'Hold Down = ' + 6 * Number(time).toFixed(4) + ' s'
+    document.getElementById('flush_timer').innerText =
+      'Flush Timer = ' + 8 * Number(time).toFixed(4) + ' s'
   } catch (e) {
     console.log(e)
   }

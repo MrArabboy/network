@@ -22,8 +22,15 @@ h2 {
   border: 8px solid rgb(66, 188, 50);
 }
 .form-inline-div {
-  margin: auto;
+  /* float: left; */
+  /* margin-left: 10px; */
   display: inline-block;
+  justify-content: center;
+  width: 40%;
+  text-align: justify;
+}
+.result {
+  /* display: inline-block; */
   justify-content: center;
   width: 40%;
   text-align: justify;
